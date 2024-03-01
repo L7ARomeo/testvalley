@@ -11,11 +11,12 @@ import LikeListOn from '@src/assets/icon/navbar/ico-likelist-on.svg'
 import LikeListOff from '@src/assets/icon/navbar/ico-likelist-off.svg'
 import MyPageOn from '@src/assets/icon/navbar/ico-mypage-on.svg'
 import MyPageOff from '@src/assets/icon/navbar/ico-mypage-off.svg'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { WEB_HOST } from '@src/constants/apis'
 
 const MobileNavbar = () => {
   const pathname = usePathname()
+  const router = useRouter()
   const navbars = [
     {
       name: 'home',
@@ -24,7 +25,7 @@ const MobileNavbar = () => {
       iconOff: HomeOff,
       activeState: pathname === '/',
       onClick: () => {
-        if (pathname !== '/') window.location.href = '/'
+        if (pathname !== '/') router.replace('/')
       },
     },
     {
@@ -48,8 +49,7 @@ const MobileNavbar = () => {
       iconOff: CategoryOff,
       activeState: pathname === '/category',
       onClick: () => {
-        if (pathname !== '/category')
-          window.location.href = `${WEB_HOST}/category`
+        if (pathname !== '/category') router.replace(`${WEB_HOST}/category`)
       },
     },
     {
@@ -59,7 +59,7 @@ const MobileNavbar = () => {
       iconOff: LikeListOff,
       activeState: pathname === '/like-list',
       onClick: () => {
-        if (pathname !== '/my') window.location.href = `${WEB_HOST}/my`
+        if (pathname !== '/my') router.replace(`${WEB_HOST}/my`)
       },
     },
     {
@@ -69,7 +69,7 @@ const MobileNavbar = () => {
       iconOff: MyPageOff,
       activeState: pathname === '/my',
       onClick: () => {
-        if (pathname !== '/my') window.location.href = `${WEB_HOST}/my`
+        if (pathname !== '/my') router.replace(`${WEB_HOST}/my`)
       },
     },
   ]

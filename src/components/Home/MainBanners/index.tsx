@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import useMediaQuery from '@src/lib/hooks/useMediaQuery'
+import { useRouter } from 'next/navigation'
 
 type Props = {
   banners: MainBanner[]
@@ -16,6 +17,12 @@ type Props = {
 
 const MainBanners = ({ banners }: Props) => {
   const desktop = useMediaQuery('(min-width:960px)')
+  const router = useRouter()
+
+  const onBannerClick = (link: string) => () => {
+    router.replace(link)
+  }
+
   if (banners.length <= 0) {
     return null
   }
@@ -38,21 +45,27 @@ const MainBanners = ({ banners }: Props) => {
           <SwiperSlide
             key={String(index)}
             className={'flex relative cursor-pointer'}>
-            <div className={'flex w-full'}>
-              <Image
-                width={960}
-                height={320}
-                src={banner.mobileImageUrl}
-                alt={banner.title}
-                className={'desktop:hidden'}
-              />
-              <Image
-                width={960}
-                height={320}
-                src={banner.pcImageUrl}
-                alt={banner.title}
-                className={'hidden desktop:block'}
-              />
+            <div
+              className={'flex w-full'}
+              onClick={onBannerClick(banner.linkUrl)}>
+              {!desktop && (
+                <Image
+                  width={960}
+                  height={320}
+                  src={banner.mobileImageUrl}
+                  alt={banner.title}
+                  className={'desktop:hidden'}
+                />
+              )}
+              {desktop && (
+                <Image
+                  width={960}
+                  height={320}
+                  src={banner.pcImageUrl}
+                  alt={banner.title}
+                  className={'hidden desktop:block'}
+                />
+              )}
             </div>
           </SwiperSlide>
         ))}
