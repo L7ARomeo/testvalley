@@ -77,7 +77,7 @@ const MobileNavbar = () => {
   return (
     <div
       className={
-        'sticky bottom-0 flex flex-row flex-nowrap bg-white w-full z-50 p-2 rounded-tl-xl rounded-tr-xl overflow-hidden desktop:hidden'
+        'sticky bottom-0 flex flex-row flex-nowrap bg-white w-full z-50 p-2 rounded-tl-[1.5rem] rounded-tr-[1.5rem] overflow-hidden desktop:hidden'
       }>
       {navbars.map((nav, index) => (
         <div
