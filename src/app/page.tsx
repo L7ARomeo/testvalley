@@ -20,9 +20,9 @@ export default async function Home() {
       className={
         'relative mx-auto shadow min-w-mobile max-w-screen-mobile desktop:max-w-full'
       }>
-      <div className={'relative bg-white overflow-hidden'}>
+      <div className={'relative bg-white'}>
         <Header />
-        <main className={'flex flex-col items-center'}>
+        <main className={'flex flex-col items-center overflow-hidden'}>
           <MainBanners {...{ banners }} />
           <MainShortcuts />
           <Collections />
