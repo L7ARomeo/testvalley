@@ -48,3 +48,10 @@
 [data-swiper="mainBanner"] .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
   opacity: 1;
 }
+
+@media screen and (max-width: 960px){
+  [data-swiper="mainBanner"] .swiper .swiper-pagination-bullet {
+    width: 4px;
+    height: 4px;
+  }
+}
