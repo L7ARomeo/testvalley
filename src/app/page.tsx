@@ -18,7 +18,7 @@ export default async function Home() {
   return (
     <div
       className={
-        'relative mx-auto shadow min-w-mobile max-w-screen-mobile desktop:max-w-full'
+        'relative mx-auto shadow max-w-screen-mobile desktop:max-w-full'
       }>
       <div className={'relative bg-white'}>
         <Header />
