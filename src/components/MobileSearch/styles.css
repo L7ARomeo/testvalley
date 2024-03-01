@@ -1,0 +1,37 @@
+.mobile-search {
+  display: none;
+}
+
+.mobile-search.active {
+  display: flex!important;
+}
+
+.mobile-search.active .backdrop {
+  animation-name: animate-backdrop;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+}
+
+.mobile-search.active .container {
+  animation-name: animate-container;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
+}
+
+@keyframes animate-backdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes animate-container {
+  from {
+    transform: translateY(40%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

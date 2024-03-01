@@ -1,0 +1,50 @@
+[data-swiper="mainBanner"] .swiper {
+  overflow: visible!important;
+}
+
+[data-swiper="mainBanner"] .swiper:before, [data-swiper="mainBanner"] .swiper:after {
+  content: '';
+  display: block;
+  width: 1000%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.6);
+  z-index: 10;
+}
+
+[data-swiper="mainBanner"] .swiper:before {
+  left: -1000%
+}
+
+[data-swiper="mainBanner"] .swiper:after {
+  right: -1000%
+}
+
+[data-swiper="mainBanner"] .swiper .swiper-button-prev, [data-swiper="mainBanner"] .swiper .swiper-button-next  {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(51,51,51,0.5);
+  border-radius: 50%;
+  color: #ffffff;
+  right: 16px
+}
+
+[data-swiper="mainBanner"] .swiper .swiper-button-prev:after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+[data-swiper="mainBanner"] .swiper .swiper-button-next:after {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+[data-swiper="mainBanner"] .swiper .swiper-pagination-bullet {
+  opacity: .2;
+  background: rgb(255, 255, 255)!important;
+}
+
+[data-swiper="mainBanner"] .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+}
