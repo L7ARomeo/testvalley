@@ -49,7 +49,7 @@ export default function RootLayout({
   children: ReactNode
 }>) {
   return (
-    <html lang="en" className={'light'}>
+    <html lang="kr" className={'light'}>
       <body className={inter.className}>{children}</body>
     </html>
   )
